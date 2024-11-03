@@ -6,6 +6,7 @@ By: bazoka-kaka
 ## Table of Contents
 
 - Algorithms
+- Data Structures
 - Linux Shell
 - C Fundamentals
 - C++ Fundamentals
