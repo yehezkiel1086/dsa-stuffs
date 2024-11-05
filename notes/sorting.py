@@ -23,8 +23,8 @@ def insertion_sort(arr):
 
 if __name__ == "__main__":
     arr = [7, 12, 9, 11, 3]
-    # s_arr = insertion_sort(arr)
+    s_arr = insertion_sort(arr)
     # s_arr = bubble_sort(arr)
-    s_arr = selection_sort(arr)
+    # s_arr = selection_sort(arr)
     
     print(s_arr)
