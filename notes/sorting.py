@@ -1,3 +1,27 @@
+def partition(arr, l, h):
+    
+    i = l - 1
+    pvt = arr[h]
+    
+    for j in range(l, h):
+        if arr[j] <= pvt:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+
+    arr[i+1], arr[h] = arr[h], arr[i+1]
+    
+    return i + 1
+    
+def quick_sort(arr, l, h):
+    if l < h:
+        pi = partition(arr, l, h)
+        
+        # left
+        quick_sort(arr, l, pi - 1)
+        
+        # right
+        quick_sort(arr, pi + 1, h)
+
 def selection_sort(arr):
     for i in range(len(arr)):
         m = i
@@ -23,8 +47,10 @@ def insertion_sort(arr):
 
 if __name__ == "__main__":
     arr = [7, 12, 9, 11, 3]
-    s_arr = insertion_sort(arr)
+    # s_arr = insertion_sort(arr)
     # s_arr = bubble_sort(arr)
     # s_arr = selection_sort(arr)
     
-    print(s_arr)
+    quick_sort(arr, 0, len(arr) - 1)
+    
+    print(arr)
