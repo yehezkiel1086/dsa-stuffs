@@ -1,4 +1,4 @@
-# Hackerrank Programming Problems Solutions
+# Programming Problems Solutions
 
 Hackerrank programming problems solutions for your interview preps <br />
 By: bazoka-kaka
@@ -12,3 +12,13 @@ By: bazoka-kaka
 - C++ Fundamentals
 - Python
 - SQL
+  
+## Platforms
+
+- Hackerrank
+- SPOJ
+- Toki
+- Codeforces
+- Codebyte
+- Codewars
+- LeetCode
