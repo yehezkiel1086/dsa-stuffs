@@ -1,17 +1,15 @@
-# Programming Problems Solutions
+# Data Structures and Algorithms Solutions (DSA Stuffs)
 
-Hackerrank programming problems solutions for your interview preps <br />
-By: bazoka-kaka
+Programming problem solutions mainly written in C++ for its complexity advantage. Includes SQL problems solutions, linux shell, also data structures and algorithms.
 
 ## Table of Contents
 
 - Algorithms
 - Data Structures
+- C++ Docs
 - Linux Shell
-- C Fundamentals
-- C++ Fundamentals
-- Python
-- SQL
+- Python Docs
+- SQL Solutions
   
 ## Platforms
 
