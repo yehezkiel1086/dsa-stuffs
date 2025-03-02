@@ -10,33 +10,28 @@ namespace second {
 
 int main() {
   /**
-   * Namespace = provides solution for preventing name conflicts in large projects. Each entity needs a unique name. A namespace allows for identically named entities as long as the namespaces are different.
+   * Namespace:
+   * - Solution for preventing name conflicts in large projects. 
+   * - Each entity needs unique name. 
+   * - A namespace allows for identically named entities as long as the namespaces are different.
    */
 
-  int x = 0;
-
-  std::cout << x << std::endl; // 0
-
-  std::cout << first::x << std::endl; // 1
-
-  std::cout << second::x << std::endl; // 2
+  std::cout << "first: " << first::x << "\n";
+  std::cout << "second: " << second::x << "\n";
 
   using namespace first;
 
-  std::cout << x << std::endl; // 1
+  std::cout << "first: " << x << "\n";
 
+  // instead of this:
+  // using namespace std;
+  // the following is better:
   using std::cout;
-  using std::endl;
-
-  cout << x << endl; // 1
-
   using std::string;
 
-  string name = "John";
+  string name = "Brian";
 
-  using namespace std; // not safe
-
-  cout << x << endl; // 1
+  cout << "Name: " << name << "\n";
 
   return 0;
 }
