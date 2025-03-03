@@ -1,19 +1,20 @@
 #include <iostream>
 
 int main() {
-
   /**
-   * type conversion = conversion a value of one data type to another
-   * 
-   * Implicit = automatic
-   * Explicit = Precede value with new data type e.g: `(int)x`
+   * 1 types of type conversion:
+   * - implicit / automatic
+   * - explicit / manual
    */
+  double x = (int) 3.14; // explicit
 
-  int x = 3.14; // implicit
+  std::cout << "x: " << x << "\n";
 
-  std::cout << x << std::endl;
+  int corr = 8;
+  int quests = 10;
+  double score = corr / (double) quests * 100;
 
-  std::cout << (char)100 << std::endl; // explicit
+  std::cout << "Score: " << score << "\n";
 
   return 0;
 }
