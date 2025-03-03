@@ -1,5 +1,5 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 int main() {
   double x = 3, y = 4, z;
