@@ -65,6 +65,66 @@ class Human {
     }
 };
 
+// inheritance
+class Shape {
+  public:
+    double area;
+    double circ;
+
+    void setArea(double area) {
+      this->area = area;
+    }
+
+    void setCirc(double circ) {
+      this->circ = circ;
+    }
+
+    double getArea() {
+      return this->area;
+    }
+
+    double getCirc() {
+      return this->circ;
+    }
+};
+
+class Square: public Shape {
+  private:
+    double side;
+  public:
+    void setArea() {
+      this->area = this->side * this->side;
+    }
+
+    void setCirc() {
+      this->circ = 4 * this->side;
+    }
+
+    Square(double side) {
+      this->side = side;
+      this->setArea();
+      this->setCirc();
+    }
+};
+
+class Triangle: public Shape {
+  private:
+    double height, bottom;
+  public:
+    Triangle(double height, double bottom) {
+      this->height = height;
+      this->bottom = bottom;
+    }
+
+    void setArea() {
+      this->area = this->height * this->bottom * 0.5;
+    }
+
+    void setCirc() {
+      this->circ = this->bottom * 3;
+    }
+};
+
 int main() {
   /**
    * object: a collection of attributes and methods.
@@ -105,6 +165,10 @@ int main() {
   human2.eat();
   human2.drink();
   human2.sleep();
+
+  Square s1 = Square(4);
+  std::cout << "Area: " << s1.getArea() << "\n";
+  std::cout << "Circumference: " << s1.getCirc() << "\n";
 
   return 0;
 }
