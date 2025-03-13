@@ -6,6 +6,15 @@ struct student {
   bool enrolled = false;
 };
 
+struct Car {
+  std::string model;
+  int year;
+  std::string color;
+};
+
+void printCar(Car &car);
+void paintCar(Car &car, std::string color);
+
 int main() {
   /**
    * struct = A structure that group related variables under one name
@@ -31,5 +40,37 @@ int main() {
   std::cout << std2.gpa << "\n";
   std::cout << std2.enrolled << "\n";
 
+  Car car1;
+  Car car2;
+
+  car1.model = "Toyota Supra MK4";
+  car1.color = "White";
+  car1.year = 2001;
+
+  paintCar(car1, "Black");
+
+  std::cout << &car1 << "\n";
+  printCar(car1);
+
+  car2.model = "Nissan GTR R34";
+  car2.color = "White";
+  car2.year = 2000;
+
+  paintCar(car2, "Gold");
+
+  std::cout << &car2 << "\n";
+  printCar(car2);
+
   return 0;
+}
+
+void paintCar(Car &car, std::string color) {
+  car.color = color;
+}
+
+void printCar(Car &car) {
+  std::cout << &car << "\n";
+  std::cout << car.model << "\n";
+  std::cout << car.year << "\n";
+  std::cout << car.color << "\n";
 }
