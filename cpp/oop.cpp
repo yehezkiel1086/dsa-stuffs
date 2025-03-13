@@ -1,11 +1,11 @@
 #include <iostream>
 
 class Human {
-  public:
+  private:
     std::string name = "John Doe";
     std::string occupation = "Unknown";
     int age = 20;
-
+  public:
     // overloading constructors
     Human(std::string name) {
       this->name = name;
@@ -22,6 +22,36 @@ class Human {
       this->age = age;
     }
 
+    // setters
+    void setName(std::string name) {
+      // could do more logics here
+      this->name = name;
+    }
+
+    void setOccupation(std::string occupation) {
+      // could do more logics here
+      this->occupation = occupation;
+    }
+
+    void setAge(int age) {
+      // could do more logics here
+      this->age = age;
+    }
+
+    // getters
+    std::string getName() {
+      return this->name;
+    }
+
+    std::string getOccupation() {
+      return this->occupation;
+    }
+
+    int getAge() {
+      return this->age;
+    }
+
+    // methods
     void eat() {
       std::cout << "This person is eating" << "\n";
     }
@@ -45,22 +75,32 @@ int main() {
    * constructor: a special method that's automatically called when an object is instantiated, useful for assigning values to attributes as arguments
    * 
    * overloaded constructors: multiple constructors with same name but different parameters allows for varying arguments when instatiating an object
+   * 
+   * Abstraction: hiding unnecesssary data from outside a class
+   * getter: function that makes a private attribute READABLE
+   * setter: function that makes a private attribute WRITEABLE
+   * 
+   * inheritance: a class can receive attributes and methods from another class
+   * - children classes inherit from a parent class
+   * - helps to reuse similar code found within multiple classes
    */
 
   Human human1 = Human("Rick", "Scientist", 60);
   Human human2 = Human("Micah", 50);
 
-  std::cout << human1.name << "\n";
-  std::cout << human1.occupation << "\n";
-  std::cout << human1.age << "\n";
+  human2.setOccupation("Outlaw");
+
+  std::cout << human1.getName() << "\n";
+  std::cout << human1.getOccupation() << "\n";
+  std::cout << human1.getAge() << "\n";
 
   human1.eat();
   human1.drink();
   human1.sleep();
 
-  std::cout << human2.name << "\n";
-  std::cout << human2.occupation << "\n";
-  std::cout << human2.age << "\n";
+  std::cout << human2.getName() << "\n";
+  std::cout << human2.getOccupation() << "\n";
+  std::cout << human2.getAge() << "\n";
 
   human2.eat();
   human2.drink();
