@@ -6,6 +6,12 @@ class Human {
     std::string occupation = "Unknown";
     int age = 20;
 
+    Human(std::string name, std::string occupation, int age) {
+      this->name = name;
+      this->occupation = occupation;
+      this->age = age;
+    }
+
     void eat() {
       std::cout << "This person is eating" << "\n";
     }
@@ -25,13 +31,11 @@ int main() {
    * - can have characteristics and could perform actions
    * - can be used to mimic real world items (e.g: phone, book, etc)
    * - created from a class which acts as "blue-print"
+   * 
+   * constructor: a special method that's automatically called when an object is instantiated, useful for assigning values to attributes as arguments
    */
 
-  Human human1;
-
-  human1.name = "Rick";
-  human1.occupation = "Scientist";
-  human1.age = 60;
+  Human human1 = Human("Rick", "Scientist", 60);
 
   std::cout << human1.name << "\n";
   std::cout << human1.occupation << "\n";
