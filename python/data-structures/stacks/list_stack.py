@@ -7,39 +7,34 @@ Stack Operations:
   Peek: Returns the top (last) element on the stack.
   isEmpty: Checks if the stack is empty.
   Size: Finds the number of elements in the stack.
-
-Reasons to implement stacks using lists/arrays:
-
-  Memory Efficient: Array elements do not hold the next elements address like linked list nodes do.
-  Easier to implement and understand: Using arrays to implement stacks require less code than using linked lists, and for this reason it is typically easier to understand as well.
-  A reason for not using arrays to implement stacks:
-
-  Fixed size: An array occupies a fixed part of the memory. This means that it could take up more memory than needed, or if the array fills up, it cannot hold more elements.
 """
 
-# list implementation
 stack = [1, 5, 2, 4, 3]
 
-print("Original:", stack)
+print(stack)
 
 # push
 stack.append(7)
 stack.append(6)
+stack.append(10)
 
-print("Appended:", stack)
+print(stack)
 
 # pop
 first = stack.pop()
 second = stack.pop()
 
-print("Popped:", stack, first, second)
+print(stack, first, second)
 
 # peek
-top = stack[-1]
-print("Top:", top)
+print(stack[-1])
 
-# isEmpty
-print("isEmpty:", not bool(stack))
+# is empty
+IS_EMPTY = not bool(stack)
+
+print(IS_EMPTY)
 
 # size
-print("Size:", len(stack))
+STACK_SIZE = len(stack)
+
+print(STACK_SIZE)
