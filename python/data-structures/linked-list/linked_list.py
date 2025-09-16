@@ -10,52 +10,56 @@ Sort
 class Node:
   def __init__(self, data):
     self.data = data
-    self.next = None
-  
-def traverse(head):
+    self.Next = None
+
+def traverse(node):
+  if node is None:
+    return
+  print(node.data, end=" -> ")
+  traverse(node.Next)
+
+def find_lowest(head):
+  if head is None:
+    return head
   curr = head
+  found = head
   while curr:
-    print(curr.data, end=" -> ")
-    curr = curr.next
-  print("null")
+    if curr.data < found.data:
+      found = curr
+    curr = curr.Next
+  return found.data
 
-def findMin(head):
-  minVal = head.data
-  curr = head
-  while curr:
-    if curr.data < minVal:
-      minVal = curr.data
-    curr = curr.next
-  return minVal
-
-def deleteNode(head, data):
-  if head.data == data:
-    return head.next
-
-  curr = head
-  while curr.next and curr.next.data != data:
-    curr = curr.next
+def delete_node(head, node):
+  if head is None:
+    return head
   
-  if curr.next == None:
+  curr = head
+  while curr.Next and curr.Next != node:
+    curr = curr.Next
+
+  if curr.Next == None:
     return head
 
-  curr.next = curr.next.next
+  curr.Next = curr.Next.Next
 
   return head
 
 def insert(head, node, pos):
   if pos == 1:
-    node.next = head
+    node.Next = head
     return node
+
+  if head == None:
+    return head
 
   curr = head
   for _ in range(pos - 2):
     if curr == None:
-      break
-    curr = curr.next
-  
-  node.next = curr.next
-  curr.next = node
+      return head
+    curr = curr.Next
+
+  node.Next = curr.Next
+  curr.Next = node
 
   return head
 
@@ -65,21 +69,20 @@ node3 = Node(3)
 node4 = Node(2)
 node5 = Node(9)
 
-node1.next = node2
-node2.next = node3
-node3.next = node4
-node4.next = node5
-
-node1 = deleteNode(node1, 3)
+node1.Next = node2
+node2.Next = node3
+node3.Next = node4
+node4.Next = node5
 
 traverse(node1)
+print("None")
+lowest = find_lowest(node1)
+print("Lowest value:", lowest)
+node1 = delete_node(node1, node3)
+traverse(node1)
+print("None")
 
-minVal = findMin(node1)
-print(minVal)
-
-# Insert a new node with value 97 at position 2
 newNode = Node(97)
 node1 = insert(node1, newNode, 2)
-
-print("\nAfter insertion:")
 traverse(node1)
+print("None")
